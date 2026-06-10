@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京の気温を調べるサイト</title>
+</head>
+<body>
+
+  <main>
+    <h1>東京の今の気温</h1>
+    <p id="temp-display">下のボタンを押すと、現在の気温が表示されます。</p>
+    <button id="get-weather-btn">天気を取得する</button>
+  </main>
+
+  <section style="margin-top: 40px; padding: 10px; border-top: 1px dotted #999;">
+    <h3>制作メモ</h3>
+    <ul>
+      <li><strong>使ったAPI：</strong> Open-Meteoという天気APIから、東京の今の気温データを取ってきました。</li>
+      <li><strong>自作モジュールの関数：</strong> <code>weather.js</code> の中に <code>fetchTemperature</code> という関数を作りました。fetchを使ってネットから気温の数字をもらってくる役割です。</li>
+      <li><strong>Live Serverで開く理由：</strong> 普通にダブルクリックで開くと、JSのモジュールがブラウザのセキュリティでブロックされて動かないからです。そのためローカルサーバーで動かす必要があります。</li>
+    </ul>
+  </section>
+
+  <footer>
+    <hr>
+    <small>Weather data by <a href="https://open-meteo.com">Open-Meteo.com</a>（CC BY 4.0）</small>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
