@@ -3,28 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>東京の気温を調べるサイト</title>
+  <title>都市の気温を調べるサイト</title>
+  <link href="https://jsdelivr.net" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
-  <main>
-    <h1>東京の今の気温</h1>
-    <p id="temp-display">下のボタンを押すと、現在の気温が表示されます。</p>
-    <button id="get-weather-btn">天気を取得する</button>
+  <main class="container-fluid py-4" style="max-width: 600px;">
+    <h1 class="h3 mb-4 text-center">都市の今の気温</h1>
+    
+    <div class="d-flex flex-column flex-sm-row gap-3 align-items-sm-end justify-content-center mb-4">
+      <div class="flex-grow-1">
+        <select id="city-select" class="form-select w-100">
+          <option value="tosi">都市を選んでね</option>
+          <option value="sapporo">札幌</option>
+          <option value="sendai">仙台</option>
+          <option value="tokyo">東京</option>
+          <option value="nagoya">名古屋</option>
+           <option value="yokohama">横浜</option>
+          <option value="osaka">大阪</option>
+          <option value="koube">神戸</option>
+          <option value="hirosima">広島</option>
+          <option value="hukuoka">福岡</option>
+          <option value="naha">那覇</option>
+        </select>
+      </div>
+      <button id="get-weather-btn" class="btn btn-primary px-4 py-2">天気を取得する</button>
+    </div>
+
+    <div class="card shadow-sm mb-4 w-100">
+      <div class="card-body text-center">
+        <p id="temp-display" class="card-text mb-0 fs-5">下のボタンを押すと、現在の気温が表示されます。</p>
+      </div>
+    </div>
   </main>
 
-  <section style="margin-top: 40px; padding: 10px; border-top: 1px dotted #999;">
-    <h3>制作メモ</h3>
-    <ul>
-      <li><strong>使ったAPI：</strong> Open-Meteoという天気APIから、東京の今の気温データを取ってきました。</li>
-      <li><strong>自作モジュールの関数：</strong> <code>weather.js</code> の中に <code>fetchTemperature</code> という関数を作りました。fetchを使ってネットから気温の数字をもらってくる役割です。</li>
-      <li><strong>Live Serverで開く理由：</strong> 普通にダブルクリックで開くと、JSのモジュールがブラウザのセキュリティでブロックされて動かないからです。そのためローカルサーバーで動かす必要があります。</li>
+  <section class="container-fluid py-2" style="max-width: 600px; border-top: 1px dotted #999;">
+    <h3 class="h5">制作メモ</h3>
+    <ul class="small text-muted">
+      <li>使ったAPI：Open-Meteoという天気APIから、選んだ都市の今のデータを取ってきました。</li>
+      <li>Live Serverで開く理由：ローカルサーバーで動かす必要があります。</li>
     </ul>
   </section>
 
-  <footer>
-    <hr>
-    <small>Weather data by <a href="https://open-meteo.com">Open-Meteo.com</a>（CC BY 4.0）</small>
+  <footer class="text-center py-4 mt-4">
+    <hr style="max-width: 600px; margin: 0 auto 20px;">
+    <small class="text-muted">Weather data by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0)</small>
   </footer>
 
   <script type="module" src="js/main.js"></script>
